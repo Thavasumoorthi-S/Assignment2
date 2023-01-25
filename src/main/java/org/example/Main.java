@@ -27,48 +27,44 @@ class Shape
         System.out.println("Area of the Circle: "+CirArea(radius));
         System.out.println("Circumference of the Circle: "+Circumference(radius));
     }
-    public static int RectArea(int length,int breadth)
+    public int RectArea(int length,int breadth)
     {
         int result1;
         result1=length*breadth;
         return result1;
 
     }
-    public static float TriArea(int breadth,int height)
+    public float TriArea(int breadth,int height)
     {
         float result;
         result=(float)(breadth*height)/2;
         return result;
 
     }
-    public static double CirArea(int radius)
+    public double CirArea(int radius)
     {
         double result;
         result=Math.PI*radius*radius;
         return result;
     }
-    public static int Rectperimeter(int length,int breadth)
+    public int Rectperimeter(int length,int breadth)
     {
         int result;
         result=2*(length+breadth);
         return result;
     }
-    public static int Triperimeter(int side1,int side2,int side3)
+    public int Triperimeter(int side1,int side2,int side3)
     {
         int result;
         result=side1+side2+side3;
         return result;
     }
-    public static double Circumference(int radius)
+    public  double Circumference(int radius)
     {
         double result;
         result=2*(Math.PI)*radius;
         return result;
     }
-
-
-
-
     public static void main(String[] args)
     {
         int choice;
@@ -92,6 +88,8 @@ class Shape
                 System.out.println("Enter the breadth: ");
                 breadth=sc.nextInt();
                 Shape shape=new Shape(length,breadth);
+                System.out.println("Area of the Rectangle: "+shape.RectArea(shape.length,shape.breadth));
+                System.out.println("perimeter of the Rectangle: "+shape.Rectperimeter(shape.length,shape.breadth));
             }
             else if(choice==2)
             {
@@ -108,6 +106,8 @@ class Shape
                 System.out.println("Enter the side3: ");
                 side3=sc.nextInt();
                 Shape shape=new Shape(breadth,height,side1,side2,side3);
+                System.out.println("Area of the Triangle: "+shape.TriArea(shape.breadth,shape.height));
+                System.out.println("perimeter of the Triangle: "+shape.Triperimeter(side1,side2,side3));
             }
             else if(choice==3)
             {
@@ -115,6 +115,8 @@ class Shape
                 System.out.println("Enter the radius: ");
                 radius=sc.nextInt();
                 Shape shape=new Shape(radius);
+                System.out.println("Area of the Circle: "+shape.CirArea(shape.radius));
+                System.out.println("Circumference of the Circle: "+shape.Circumference(shape.radius));
             }
             else if(choice==4)
             {
