@@ -1,8 +1,11 @@
 package org.example;
 import java.util.*;
 import java.lang.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 class Shape
 {
+    private static final Logger LOGGER=Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
     int length;
     int breadth;
     int height;
@@ -11,21 +14,15 @@ class Shape
     {
         this.length=length;
         this.breadth=breadth;
-        System.out.println("Area of the Rectangle: "+RectArea(length,breadth));
-        System.out.println("perimeter of the Rectangle: "+Rectperimeter(length,breadth));
     }
     Shape(int breadth,int height,int side1,int side2,int side3)
     {
         this.breadth=breadth;
         this.height=height;
-        System.out.println("Area of the Triangle: "+TriArea(breadth,height));
-        System.out.println("perimeter of the Triangle: "+Triperimeter(side1,side2,side3));
     }
     Shape(int radius)
     {
         this.radius=radius;
-        System.out.println("Area of the Circle: "+CirArea(radius));
-        System.out.println("Circumference of the Circle: "+Circumference(radius));
     }
     public int RectArea(int length,int breadth)
     {
@@ -33,13 +30,11 @@ class Shape
         result1=length*breadth;
         return result1;
 
-    }
-    public float TriArea(int breadth,int height)
+    }public float TriArea(int breadth,int height)
     {
         float result;
         result=(float)(breadth*height)/2;
         return result;
-
     }
     public double CirArea(int radius)
     {
@@ -78,52 +73,49 @@ class Shape
         Scanner sc=new Scanner(System.in);
         while(true)
         {
-            System.out.println("\n1)Rectangle\n2)Triangle\n3)circle\n4)exit");
-            System.out.println("Enter your choice: ");
+            LOGGER.log(Level.INFO,"\n1)Rectangle\n2)Triangle\n3)circle\n4)exit");
+            LOGGER.log(Level.INFO,"Enter your choice: ");
             choice=sc.nextInt();
             if(choice==1)
             {
-                System.out.println("Enter the length: ");
+                LOGGER.log(Level.INFO,"Enter the length: ");
                 length=sc.nextInt();
-                System.out.println("Enter the breadth: ");
+                LOGGER.log(Level.INFO,"Enter the breadth: ");
                 breadth=sc.nextInt();
                 Shape shape=new Shape(length,breadth);
-                System.out.println("Area of the Rectangle: "+shape.RectArea(shape.length,shape.breadth));
-                System.out.println("perimeter of the Rectangle: "+shape.Rectperimeter(shape.length,shape.breadth));
+                LOGGER.log(Level.INFO,Integer.toString(shape.RectArea(shape.length,shape.breadth)),"Area of the Rectangle: "+shape.RectArea(shape.length,shape.breadth));
+                LOGGER.log(Level.INFO,Integer.toString(shape.Rectperimeter(shape.length,shape.breadth)),"perimeter of the Rectangle: "+shape.Rectperimeter(shape.length,shape.breadth));
             }
             else if(choice==2)
             {
                 //System.out.println("Enter the length: ");
                 //length=sc.nextInt();
-                System.out.println("Enter the breadth: ");
+                LOGGER.log(Level.INFO,"Enter the breadth: ");
                 breadth=sc.nextInt();
-                System.out.println("Enter the height: ");
+                LOGGER.log(Level.INFO,"Enter the height: ");
                 height=sc.nextInt();
-                System.out.println("Enter the side1: ");
+                LOGGER.log(Level.INFO,"Enter the side1: ");
                 side1=sc.nextInt();
-                System.out.println("Enter the side2: ");
+                LOGGER.log(Level.INFO,"Enter the side2: ");
                 side2=sc.nextInt();
-                System.out.println("Enter the side3: ");
+                LOGGER.log(Level.INFO,"Enter the side3: ");
                 side3=sc.nextInt();
                 Shape shape=new Shape(breadth,height,side1,side2,side3);
-                System.out.println("Area of the Triangle: "+shape.TriArea(shape.breadth,shape.height));
-                System.out.println("perimeter of the Triangle: "+shape.Triperimeter(side1,side2,side3));
+                LOGGER.log(Level.INFO,Float.toString(shape.TriArea(shape.breadth,shape.height)),"Area of the Triangle: "+shape.TriArea(shape.breadth,shape.height));
+                LOGGER.log(Level.INFO,Integer.toString(shape.Triperimeter(side1,side2,side3)),"perimeter of the Triangle: "+shape.Triperimeter(side1,side2,side3));
             }
             else if(choice==3)
             {
-
-                System.out.println("Enter the radius: ");
+                LOGGER.log(Level.INFO,"Enter the radius: ");
                 radius=sc.nextInt();
                 Shape shape=new Shape(radius);
-                System.out.println("Area of the Circle: "+shape.CirArea(shape.radius));
-                System.out.println("Circumference of the Circle: "+shape.Circumference(shape.radius));
+                LOGGER.log(Level.INFO,Double.toString(shape.CirArea(shape.radius)),"Area of the Circle: "+shape.CirArea(shape.radius));
+                LOGGER.log(Level.INFO,Double.toString(shape.Circumference(shape.radius)),"Circumference of the Circle: "+shape.Circumference(shape.radius));
             }
             else if(choice==4)
             {
                 break;
             }
-
         }
-
     }
 }
