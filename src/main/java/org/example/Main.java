@@ -54,7 +54,7 @@ class Shape
         result=side1+side2+side3;
         return result;
     }
-    public  double Circumference(int radius)
+    public  double CIRCUM_FERENCE(int radius)
     {
         double result;
         result=2*(Math.PI)*radius;
@@ -110,7 +110,7 @@ class Shape
                 radius=sc.nextInt();
                 Shape shape=new Shape(radius);
                 LOGGER.log(Level.INFO,Double.toString(shape.CirArea(shape.radius)),"Area of the Circle: "+shape.CirArea(shape.radius));
-                LOGGER.log(Level.INFO,Double.toString(shape.Circumference(shape.radius)),"Circumference of the Circle: "+shape.Circumference(shape.radius));
+                LOGGER.log(Level.INFO,Double.toString(shape.CIRCUM_FERENCE(shape.radius)),"Circumference of the Circle: "+shape.CIRCUM_FERENCE(shape.radius));
             }
             else if(choice==4)
             {
