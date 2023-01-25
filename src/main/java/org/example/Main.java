@@ -3,7 +3,6 @@ import java.util.*;
 import java.lang.*;
 class Shape
 {
-    String type;
     int length;
     int breadth;
     int height;
@@ -30,41 +29,47 @@ class Shape
     }
     public static int RectArea(int length,int breadth)
     {
-        int result=length*breadth;
-        return result;
+        int result1;
+        result1=length*breadth;
+        return result1;
 
     }
     public static float TriArea(int breadth,int height)
     {
-        float result=(float)(breadth*height)/2;
+        float result;
+        result=(float)(breadth*height)/2;
         return result;
 
     }
     public static double CirArea(int radius)
     {
-        double result=Math.PI*radius*radius;
+        double result;
+        result=Math.PI*radius*radius;
         return result;
     }
     public static int Rectperimeter(int length,int breadth)
     {
-        int result=2*(length+breadth);
+        int result;
+        result=2*(length+breadth);
         return result;
     }
     public static int Triperimeter(int side1,int side2,int side3)
     {
-        int result=side1+side2+side3;
+        int result;
+        result=side1+side2+side3;
         return result;
     }
     public static double Circumference(int radius)
     {
-        double result=2*(Math.PI)*radius;
+        double result;
+        result=2*(Math.PI)*radius;
         return result;
     }
 
 
 
 
-    public static void main(String args[])
+    public static void main(String[] args)
     {
         int choice;
         int length;
@@ -86,14 +91,12 @@ class Shape
                 length=sc.nextInt();
                 System.out.println("Enter the breadth: ");
                 breadth=sc.nextInt();
-                //System.out.println("Enter the height: ");
-                //height=sc.nextInt();
                 Shape shape=new Shape(length,breadth);
             }
             else if(choice==2)
             {
-                System.out.println("Enter the length: ");
-                length=sc.nextInt();
+                //System.out.println("Enter the length: ");
+                //length=sc.nextInt();
                 System.out.println("Enter the breadth: ");
                 breadth=sc.nextInt();
                 System.out.println("Enter the height: ");
