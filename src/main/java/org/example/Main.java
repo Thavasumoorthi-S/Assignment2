@@ -48,7 +48,7 @@ class Shape
         result=2*(length+breadth);
         return result;
     }
-    public int Triperimeter(int side1,int side2,int side3)
+    public int TRI_PERIMETER(int side1,int side2,int side3)
     {
         int result;
         result=side1+side2+side3;
@@ -102,7 +102,7 @@ class Shape
                 side3=sc.nextInt();
                 Shape shape=new Shape(breadth,height,side1,side2,side3);
                 LOGGER.log(Level.INFO,Float.toString(shape.TriArea(shape.breadth,shape.height)),"Area of the Triangle: "+shape.TriArea(shape.breadth,shape.height));
-                LOGGER.log(Level.INFO,Integer.toString(shape.Triperimeter(side1,side2,side3)),"perimeter of the Triangle: "+shape.Triperimeter(side1,side2,side3));
+                LOGGER.log(Level.INFO,Integer.toString(shape.TRI_PERIMETER(side1,side2,side3)),"perimeter of the Triangle: "+shape.TRI_PERIMETER(side1,side2,side3));
             }
             else if(choice==3)
             {
