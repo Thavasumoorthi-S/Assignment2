@@ -68,7 +68,7 @@ class Shape
         int radius;
         int side1;
         int side2;
-        int side3;
+        int base;
         Scanner sc=new Scanner(System.in);
         while(true)
         {
@@ -95,11 +95,11 @@ class Shape
                 side1=sc.nextInt();
                 LOGGER.log(Level.INFO,"Enter the side2: ");
                 side2=sc.nextInt();
-                LOGGER.log(Level.INFO,"Enter the side3: ");
-                side3=sc.nextInt();
-                Shape shape=new Shape(breadth,height,side1,side2,side3);
+                LOGGER.log(Level.INFO,"Enter the base: ");
+                base=sc.nextInt();
+                Shape shape=new Shape(breadth,height,side1,side2,base);
                 LOGGER.log(Level.INFO,Float.toString(shape.triarea(shape.breadth,shape.height)),"Area of the Triangle: "+shape.triarea(shape.breadth,shape.height));
-                LOGGER.log(Level.INFO,Integer.toString(shape.triperimeter(side1,side2,side3)),"perimeter of the Triangle: "+shape.triperimeter(side1,side2,side3));
+                LOGGER.log(Level.INFO,Integer.toString(shape.triperimeter(side1,side2,base)),"perimeter of the Triangle: "+shape.triperimeter(side1,side2,base));
             }
             else if(choice==3)
             {
