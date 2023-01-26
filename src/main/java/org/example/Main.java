@@ -24,37 +24,37 @@ class Shape
     {
         this.radius=radius;
     }
-    public int RectArea(int length,int breadth)
+    public int RECTAREA(int length,int breadth)
     {
         int result1;
         result1=length*breadth;
         return result1;
 
-    }public float TriArea(int breadth,int height)
+    }public float TRIAREA(int breadth,int height)
     {
         float result;
         result=(float)(breadth*height)/2;
         return result;
     }
-    public double CirArea(int radius)
+    public double CIRAREA(int radius)
     {
         double result;
         result=Math.PI*radius*radius;
         return result;
     }
-    public int Rectperimeter(int length,int breadth)
+    public int RECTPERIMETER(int length,int breadth)
     {
         int result;
         result=2*(length+breadth);
         return result;
     }
-    public int TRI_PERIMETER(int side1,int side2,int side3)
+    public int TRIPERIMETER(int side1,int side2,int side3)
     {
         int result;
         result=side1+side2+side3;
         return result;
     }
-    public  double CIRCUM_FERENCE(int radius)
+    public  double CIRCUMFERENCE(int radius)
     {
         double result;
         result=2*(Math.PI)*radius;
@@ -83,8 +83,8 @@ class Shape
                 LOGGER.log(Level.INFO,"Enter the breadth: ");
                 breadth=sc.nextInt();
                 Shape shape=new Shape(length,breadth);
-                LOGGER.log(Level.INFO,Integer.toString(shape.RectArea(shape.length,shape.breadth)),"Area of the Rectangle: "+shape.RectArea(shape.length,shape.breadth));
-                LOGGER.log(Level.INFO,Integer.toString(shape.Rectperimeter(shape.length,shape.breadth)),"perimeter of the Rectangle: "+shape.Rectperimeter(shape.length,shape.breadth));
+                LOGGER.log(Level.INFO,Integer.toString(shape.RECTAREA(shape.length,shape.breadth)),"Area of the Rectangle: "+shape.RECTAREA(shape.length,shape.breadth));
+                LOGGER.log(Level.INFO,Integer.toString(shape.RECTPERIMETER(shape.length,shape.breadth)),"perimeter of the Rectangle: "+shape.RECTPERIMETER(shape.length,shape.breadth));
             }
             else if(choice==2)
             {
@@ -101,16 +101,16 @@ class Shape
                 LOGGER.log(Level.INFO,"Enter the side3: ");
                 side3=sc.nextInt();
                 Shape shape=new Shape(breadth,height,side1,side2,side3);
-                LOGGER.log(Level.INFO,Float.toString(shape.TriArea(shape.breadth,shape.height)),"Area of the Triangle: "+shape.TriArea(shape.breadth,shape.height));
-                LOGGER.log(Level.INFO,Integer.toString(shape.TRI_PERIMETER(side1,side2,side3)),"perimeter of the Triangle: "+shape.TRI_PERIMETER(side1,side2,side3));
+                LOGGER.log(Level.INFO,Float.toString(shape.TRIAREA(shape.breadth,shape.height)),"Area of the Triangle: "+shape.TRIAREA(shape.breadth,shape.height));
+                LOGGER.log(Level.INFO,Integer.toString(shape.TRIPERIMETER(side1,side2,side3)),"perimeter of the Triangle: "+shape.TRIPERIMETER(side1,side2,side3));
             }
             else if(choice==3)
             {
                 LOGGER.log(Level.INFO,"Enter the radius: ");
                 radius=sc.nextInt();
                 Shape shape=new Shape(radius);
-                LOGGER.log(Level.INFO,Double.toString(shape.CirArea(shape.radius)),"Area of the Circle: "+shape.CirArea(shape.radius));
-                LOGGER.log(Level.INFO,Double.toString(shape.CIRCUM_FERENCE(shape.radius)),"Circumference of the Circle: "+shape.CIRCUM_FERENCE(shape.radius));
+                LOGGER.log(Level.INFO,Double.toString(shape.CIRAREA(shape.radius)),"Area of the Circle: "+shape.CIRAREA(shape.radius));
+                LOGGER.log(Level.INFO,Double.toString(shape.CIRCUMFERENCE(shape.radius)),"Circumference of the Circle: "+shape.CIRCUMFERENCE(shape.radius));
             }
             else if(choice==4)
             {
