@@ -87,8 +87,6 @@ class Shape
             }
             else if(choice==2)
             {
-                //System.out.println("Enter the length: ");
-                //length=sc.nextInt();
                 LOGGER.log(Level.INFO,"Enter the breadth: ");
                 breadth=sc.nextInt();
                 LOGGER.log(Level.INFO,"Enter the height: ");
