@@ -1,6 +1,5 @@
 package org.example;
 import java.util.*;
-import java.lang.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 class Shape
