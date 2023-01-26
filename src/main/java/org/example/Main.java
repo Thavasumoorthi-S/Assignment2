@@ -23,7 +23,7 @@ class Shape
     {
         this.radius=radius;
     }
-    public int RECTAREA(int length,int breadth)
+    public int rectarea(int length,int breadth)
     {
         int result1;
         result1=length*breadth;
@@ -82,7 +82,7 @@ class Shape
                 LOGGER.log(Level.INFO,"Enter the breadth: ");
                 breadth=sc.nextInt();
                 Shape shape=new Shape(length,breadth);
-                LOGGER.log(Level.INFO,Integer.toString(shape.RECTAREA(shape.length,shape.breadth)),"Area of the Rectangle: "+shape.RECTAREA(shape.length,shape.breadth));
+                LOGGER.log(Level.INFO,Integer.toString(shape.rectarea(shape.length,shape.breadth)),"Area of the Rectangle: "+shape.rectarea(shape.length,shape.breadth));
                 LOGGER.log(Level.INFO,Integer.toString(shape.RECTPERIMETER(shape.length,shape.breadth)),"perimeter of the Rectangle: "+shape.RECTPERIMETER(shape.length,shape.breadth));
             }
             else if(choice==2)
