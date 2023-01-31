@@ -72,7 +72,6 @@ class Shape
         Scanner sc=new Scanner(System.in);
         while(true)
         {
-            try {
                 LOGGER.log(Level.INFO, "\n1)Rectangle\n2)Triangle\n3)circle\n4)exit");
                 LOGGER.log(Level.INFO, "Enter your choice: ");
                 choice = sc.nextInt();
@@ -107,11 +106,6 @@ class Shape
                 } else if (choice == 4) {
                     break;
                 }
-            }
-            catch(InputMismatchException ex)
-            {
-                throw new InputMismatchException("please Enter the valid input");
-            }
         }
     }
 }
