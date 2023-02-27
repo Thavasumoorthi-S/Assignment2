@@ -5,63 +5,73 @@ import java.util.logging.Logger;
 class Shape
 {
     private static final Logger LOGGER=Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    String type;
     int length;
     int breadth;
     int height;
     int radius;
-    Shape(int length,int breadth)
+    int side1;
+    int side2;
+    int base;
+    Shape(int length,int breadth,String type)
     {
         this.length=length;
         this.breadth=breadth;
+        this.type=type;
     }
-    Shape(int breadth,int height,int side1,int side2,int side3)
+    Shape(int breadth,int height,int side1,int side2,int base,String type)
     {
         this.breadth=breadth;
         this.height=height;
+        this.side1=side1;
+        this.side2=side2;
+        this.base=base;
+        this.type=type;
     }
-    Shape(int radius)
+    Shape(int radius,String type)
     {
         this.radius=radius;
+        this.type=type;
     }
-    public int rectarea(int length,int breadth)
+    public int rectarea()
     {
         int result1;
-        result1=length*breadth;
+        result1=this.length*this.breadth;
         return result1;
 
-    }public float triarea(int breadth,int height)
+    }public float triarea()
     {
         float result;
-        result=(float)(breadth*height)/2;
+        result=(float)(this.breadth*this.height)/2;
         return result;
     }
-    public double cirarea(int radius)
+    public double cirarea()
     {
         double result;
-        result=Math.PI*radius*radius;
+        result=Math.PI*this.radius*this.radius;
         return result;
     }
-    public int rectperimeter(int length,int breadth)
+    public int rectperimeter()
     {
         int result;
-        result=2*(length+breadth);
+        result=2*(this.length+this.breadth);
         return result;
     }
-    public int triperimeter(int side1,int side2,int side3)
+    public int triperimeter()
     {
         int result;
-        result=side1+side2+side3;
+        result=this.side1+this.side2+this.base;
         return result;
     }
-    public  double circumference(int radius)
+    public  double circumference()
     {
         double result;
-        result=2*(Math.PI)*radius;
+        result=2*(Math.PI)*this.radius;
         return result;
     }
     public static void main(String[] args)
     {
-        int choice;
+        String type;
         int length;
         int breadth;
         int height;
@@ -72,18 +82,17 @@ class Shape
         Scanner sc=new Scanner(System.in);
         while(true)
         {
-                LOGGER.log(Level.INFO, "\n1)Rectangle\n2)Triangle\n3)circle\n4)exit");
-                LOGGER.log(Level.INFO, "Enter your choice: ");
-                choice = sc.nextInt();
-                if (choice == 1) {
+                System.out.println("user enter correct spellling like rectangle,triangle,circle");
+                type=sc.next();
+                if (type.equals("rectangle")) {
                     LOGGER.log(Level.INFO, "Enter the length: ");
                     length = sc.nextInt();
                     LOGGER.log(Level.INFO, "Enter the breadth: ");
                     breadth = sc.nextInt();
-                    Shape shape = new Shape(length, breadth);
-                    LOGGER.log(Level.INFO, Integer.toString(shape.rectarea(shape.length, shape.breadth)), "Area of the Rectangle: " + shape.rectarea(shape.length, shape.breadth));
-                    LOGGER.log(Level.INFO, Integer.toString(shape.rectperimeter(shape.length, shape.breadth)), "perimeter of the Rectangle: " + shape.rectperimeter(shape.length, shape.breadth));
-                } else if (choice == 2) {
+                    Shape shape = new Shape(length, breadth,type);
+                    LOGGER.info("Area of the rectangle :"+Integer.toString(shape.rectarea()));
+                    LOGGER.info("perimeter of the rectangle :"+Integer.toString(shape.rectperimeter()));
+                } else if (type.equals("triangle")){
                     LOGGER.log(Level.INFO, "Enter the breadth: ");
                     breadth = sc.nextInt();
                     LOGGER.log(Level.INFO, "Enter the height: ");
@@ -94,16 +103,16 @@ class Shape
                     side2 = sc.nextInt();
                     LOGGER.log(Level.INFO, "Enter the base: ");
                     base = sc.nextInt();
-                    Shape shape = new Shape(breadth, height, side1, side2, base);
-                    LOGGER.log(Level.INFO, Float.toString(shape.triarea(shape.breadth, shape.height)), "Area of the Triangle: " + shape.triarea(shape.breadth, shape.height));
-                    LOGGER.log(Level.INFO, Integer.toString(shape.triperimeter(side1, side2, base)), "perimeter of the Triangle: " + shape.triperimeter(side1, side2, base));
-                } else if (choice == 3) {
+                    Shape shape = new Shape(breadth, height, side1, side2, base,type);
+                    LOGGER.info("Area of the Triangle: " + shape.triarea());
+                    LOGGER.info("perimeter of the Triangle: " + shape.triperimeter());
+                } else if (type.equals( "circle")) {
                     LOGGER.log(Level.INFO, "Enter the radius: ");
                     radius = sc.nextInt();
-                    Shape shape = new Shape(radius);
-                    LOGGER.log(Level.INFO, Double.toString(shape.cirarea(shape.radius)), "Area of the Circle: " + shape.cirarea(shape.radius));
-                    LOGGER.log(Level.INFO, Double.toString(shape.circumference(shape.radius)), "Circumference of the Circle: " + shape.circumference(shape.radius));
-                } else if (choice == 4) {
+                    Shape shape = new Shape(radius,type);
+                    LOGGER.info("Area of the Circle: " + shape.cirarea());
+                    LOGGER.info("Circumference of the Circle: " + shape.circumference());
+                } else {
                     break;
                 }
         }
