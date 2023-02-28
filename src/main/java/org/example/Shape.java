@@ -85,7 +85,8 @@ class Shape
         {
             LOGGER.info("user enter correct spellling like rectangle,triangle,circle");
             type=sc.next();
-            if(type.equals("rectangle")){
+            if(type.equals("rectangle"))
+            {
                     LOGGER.log(Level.INFO, "Enter the length: ");
                     length = sc.nextInt();
                     LOGGER.log(Level.INFO, "Enter the breadth: ");
@@ -95,8 +96,9 @@ class Shape
                     LOGGER.info(s);
                     s="perimeter of the rectangle :" + shape.rectperimeter();
                     LOGGER.info(s);
-                }
-            if(type.equals("triangle")){
+            }
+            else if(type.equals("triangle"))
+            {
                     LOGGER.log(Level.INFO, "Enter the breadth: ");
                     breadth = sc.nextInt();
                     LOGGER.log(Level.INFO, "Enter the height: ");
@@ -112,8 +114,9 @@ class Shape
                     LOGGER.info(s);
                     s="perimeter of the Triangle: " + shape.triperimeter();
                     LOGGER.info(s);
-                }
-            if(type.equals("circle")){
+            }
+           else if(type.equals("circle"))
+            {
             LOGGER.log(Level.INFO, "Enter the radius: ");
             radius = sc.nextInt();
             Shape shape = new Shape(radius, type);
@@ -122,9 +125,10 @@ class Shape
             s = "circumference of the Circle: " + shape.circumference();
             LOGGER.info(s);
             }
-            else{
+            else
+            {
                 break;
-        }
+            }
         }
     }
 }
