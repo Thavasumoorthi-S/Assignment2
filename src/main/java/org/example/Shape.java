@@ -81,13 +81,11 @@ class Shape
         int base;
         Scanner sc=new Scanner(System.in);
         String s;
-        label:
         while(true)
         {
-                LOGGER.info("user enter correct spellling like rectangle,triangle,circle");
-                type=sc.next();
-            switch (type) {
-                case "rectangle": {
+            LOGGER.info("user enter correct spellling like rectangle,triangle,circle");
+            type=sc.next();
+            if(type.equals("rectangle")){
                     LOGGER.log(Level.INFO, "Enter the length: ");
                     length = sc.nextInt();
                     LOGGER.log(Level.INFO, "Enter the breadth: ");
@@ -97,9 +95,8 @@ class Shape
                     LOGGER.info(s);
                     s="perimeter of the rectangle :" + shape.rectperimeter();
                     LOGGER.info(s);
-                    break;
                 }
-                case "triangle": {
+            if(type.equals("triangle")){
                     LOGGER.log(Level.INFO, "Enter the breadth: ");
                     breadth = sc.nextInt();
                     LOGGER.log(Level.INFO, "Enter the height: ");
@@ -115,22 +112,19 @@ class Shape
                     LOGGER.info(s);
                     s="perimeter of the Triangle: " + shape.triperimeter();
                     LOGGER.info(s);
-                    break;
                 }
-                case "circle": {
-                    LOGGER.log(Level.INFO, "Enter the radius: ");
-                    radius = sc.nextInt();
-                    Shape shape = new Shape(radius, type);
-                    s="Area of the Circle:"+shape.cirarea();
-                    LOGGER.info(s);
-                    s="circumference of the Circle: " +shape.circumference();
-                    LOGGER.info(s);
-
-                    break;
-                }
-                default:
-                    break label;
+            if(type.equals("circle")){
+            LOGGER.log(Level.INFO, "Enter the radius: ");
+            radius = sc.nextInt();
+            Shape shape = new Shape(radius, type);
+            s = "Area of the Circle:" + shape.cirarea();
+            LOGGER.info(s);
+            s = "circumference of the Circle: " + shape.circumference();
+            LOGGER.info(s);
             }
+            else{
+                break;
+        }
         }
     }
 }
