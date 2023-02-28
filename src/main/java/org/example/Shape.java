@@ -80,19 +80,23 @@ class Shape
         int side2;
         int base;
         Scanner sc=new Scanner(System.in);
+        label:
         while(true)
         {
                 System.out.println("user enter correct spellling like rectangle,triangle,circle");
                 type=sc.next();
-                if (type.equals("rectangle")) {
+            switch (type) {
+                case "rectangle": {
                     LOGGER.log(Level.INFO, "Enter the length: ");
                     length = sc.nextInt();
                     LOGGER.log(Level.INFO, "Enter the breadth: ");
                     breadth = sc.nextInt();
-                    Shape shape = new Shape(length, breadth,type);
-                    LOGGER.info("Area of the rectangle :"+Integer.toString(shape.rectarea()));
-                    LOGGER.info("perimeter of the rectangle :"+Integer.toString(shape.rectperimeter()));
-                } else if (type.equals("triangle")){
+                    Shape shape = new Shape(length, breadth, type);
+                    LOGGER.info("Area of the rectangle :" + shape.rectarea());
+                    LOGGER.info("perimeter of the rectangle :" + shape.rectperimeter());
+                    break;
+                }
+                case "triangle": {
                     LOGGER.log(Level.INFO, "Enter the breadth: ");
                     breadth = sc.nextInt();
                     LOGGER.log(Level.INFO, "Enter the height: ");
@@ -103,18 +107,23 @@ class Shape
                     side2 = sc.nextInt();
                     LOGGER.log(Level.INFO, "Enter the base: ");
                     base = sc.nextInt();
-                    Shape shape = new Shape(breadth, height, side1, side2, base,type);
+                    Shape shape = new Shape(breadth, height, side1, side2, base, type);
                     LOGGER.info("Area of the Triangle: " + shape.triarea());
                     LOGGER.info("perimeter of the Triangle: " + shape.triperimeter());
-                } else if (type.equals( "circle")) {
-                    LOGGER.log(Level.INFO, "Enter the radius: ");
-                    radius = sc.nextInt();
-                    Shape shape = new Shape(radius,type);
-                    LOGGER.info("Area of the Circle: " + shape.cirarea());
-                    LOGGER.info("Circumference of the Circle: " + shape.circumference());
-                } else {
                     break;
                 }
+                case "circle": {
+                    LOGGER.log(Level.INFO, "Enter the radius: ");
+                    radius = sc.nextInt();
+                    Shape shape = new Shape(radius, type);
+                    LOGGER.log(Level.INFO,"Area of the Circle: " + shape.cirarea());
+                    LOGGER.log(Level.INFO,"circumference of the Circle: " + shape.circumference());
+
+                    break;
+                }
+                default:
+                    break label;
+            }
         }
     }
 }
