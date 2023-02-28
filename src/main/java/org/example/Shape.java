@@ -84,7 +84,7 @@ class Shape
         label:
         while(true)
         {
-                System.out.println("user enter correct spellling like rectangle,triangle,circle");
+                LOGGER.info("user enter correct spellling like rectangle,triangle,circle");
                 type=sc.next();
             switch (type) {
                 case "rectangle": {
@@ -93,8 +93,10 @@ class Shape
                     LOGGER.log(Level.INFO, "Enter the breadth: ");
                     breadth = sc.nextInt();
                     Shape shape = new Shape(length, breadth, type);
-                    LOGGER.info("Area of the rectangle :" + shape.rectarea());
-                    LOGGER.info("perimeter of the rectangle :" + shape.rectperimeter());
+                    s="Area of the rectangle :" + shape.rectarea();
+                    LOGGER.info(s);
+                    s="perimeter of the rectangle :" + shape.rectperimeter();
+                    LOGGER.info(s);
                     break;
                 }
                 case "triangle": {
@@ -109,8 +111,10 @@ class Shape
                     LOGGER.log(Level.INFO, "Enter the base: ");
                     base = sc.nextInt();
                     Shape shape = new Shape(breadth, height, side1, side2, base, type);
-                    LOGGER.info("Area of the Triangle: " + shape.triarea());
-                    LOGGER.info("perimeter of the Triangle: " + shape.triperimeter());
+                    s="Area of the Triangle: " + shape.triarea();
+                    LOGGER.info(s);
+                    s="perimeter of the Triangle: " + shape.triperimeter();
+                    LOGGER.info(s);
                     break;
                 }
                 case "circle": {
