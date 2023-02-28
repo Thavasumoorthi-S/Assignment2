@@ -116,8 +116,8 @@ class Shape
                     LOGGER.log(Level.INFO, "Enter the radius: ");
                     radius = sc.nextInt();
                     Shape shape = new Shape(radius, type);
-                    LOGGER.info("Area of the Circle: " + Double.toString(shape.cirarea()));
-                    LOGGER.info("circumference of the Circle: " + Double.toString(shape.circumference()));
+                    LOGGER.info("Area of the Circle: %f " + (shape.cirarea()));
+                    LOGGER.info("circumference of the Circle: %f" +(shape.circumference()));
 
                     break;
                 }
