@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dea60f83-05eb-4e3a-8c12-c8ef9cfe2847" name="Changes" comment="second commit">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Shape.java" afterDir="false" />
-    </list>
+    <list default="true" id="dea60f83-05eb-4e3a-8c12-c8ef9cfe2847" name="Changes" comment="second commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -167,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677594434352</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="second commit">
+      <created>1677594727008</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1677594727008</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
