@@ -80,6 +80,7 @@ class Shape
         int side2;
         int base;
         Scanner sc=new Scanner(System.in);
+        String s;
         label:
         while(true)
         {
@@ -116,8 +117,10 @@ class Shape
                     LOGGER.log(Level.INFO, "Enter the radius: ");
                     radius = sc.nextInt();
                     Shape shape = new Shape(radius, type);
-                    LOGGER.info("Area of the Circle: %f " + (shape.cirarea()));
-                    LOGGER.info("circumference of the Circle: %f" +(shape.circumference()));
+                    s="Area of the Circle:"+shape.cirarea();
+                    LOGGER.info(s);
+                    s="circumference of the Circle: " +shape.circumference();
+                    LOGGER.info(s);
 
                     break;
                 }
